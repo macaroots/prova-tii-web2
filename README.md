@@ -26,6 +26,22 @@ Usuários cadastrados:
 | admin   | admin123  | admin  |
 | leitor  | leitor123 | leitor |
 
+### Verificando suas respostas (testes automáticos)
+
+Com o servidor ligado (`docker compose up`), em outro terminal:
+
+```sh
+# todas as questões
+docker compose exec node npm test
+
+# só uma questão
+docker compose exec node node --test test/q2-dao.test.js
+```
+
+Arquivos em `app/test/`: `q1-sessao`, `q2-dao`, `q3-autorizacao`, `q4-formulario`, `q5-ajax` e `extras`. Cada questão aparece com ✔ (passou) ou ✖ (falhou, com o motivo). Alguns testes já passam desde o início: eles verificam que você não quebrou o que já funcionava. **Não altere os testes.** A Questão 0 (Git) não tem teste automático.
+
+> Se aparecer `Cannot find module 'jsdom'`, recrie o container: `docker compose up --build`.
+
 ### Testando a API pela linha de comando
 
 ```sh
@@ -54,6 +70,7 @@ curl -b cookies.txt -X DELETE http://localhost:3000/api/livros/1
 docker-compose.yml        containers node + mysql
 bd/init.sql               criação das tabelas e dados iniciais
 app/
+  test/                   testes automáticos das questões
   express.js              servidor, middlewares, login e rotas
   controllers/            Controllers (MVC): CrudController, LivrosController
   lib/                    Services (regras) e Repositories (DAO / MySQL)
