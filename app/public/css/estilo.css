@@ -1,0 +1,7 @@
+body { font-family: sans-serif; max-width: 900px; margin: 0 auto; padding: 0 16px; }
+header nav a { margin-right: 12px; }
+form label { display: block; margin: 6px 0; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid #ccc; padding: 6px; text-align: left; }
+.erro { color: #b00020; }
+.sucesso { color: #1b5e20; }

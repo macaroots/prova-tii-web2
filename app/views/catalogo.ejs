@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca - Catálogo</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Catálogo</h1>
+        <nav>
+            <a href="/">Início</a>
+            <a href="/livros">Catálogo</a>
+        </nav>
+    </header>
+    <main>
+        <!-- TODO Questão 4: formulário de busca por autor (method GET, campo "autor") -->
+
+        <ul>
+        <% for (const livro of livros) { %>
+            <li>
+                <strong><%= livro.titulo %></strong> — <%= livro.autor %> (<%= livro.ano %>)
+                <% if (!livro.disponivel) { %><em>emprestado</em><% } %>
+            </li>
+        <% } %>
+        </ul>
+    </main>
+</body>
+</html>

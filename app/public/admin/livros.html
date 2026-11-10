@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca - Admin</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Biblioteca - Administração</h1>
+        <nav>
+            <a href="/">Início</a>
+            <a href="/livros">Catálogo</a>
+            <a href="/logout">Sair</a>
+        </nav>
+        <p id="usuario-logado"></p>
+    </header>
+    <main>
+        <section>
+            <h2>Cadastro de livro</h2>
+            <form id="form-livro">
+                <label>Título: <input type="text" name="titulo"></label>
+                <label>Autor: <input type="text" name="autor"></label>
+                <label>Ano: <input type="number" name="ano"></label>
+                <label><input type="checkbox" name="disponivel" checked> Disponível</label>
+                <button>Cadastrar</button>
+            </form>
+            <p id="mensagem"></p>
+        </section>
+        <section>
+            <h2>Livros</h2>
+            <table>
+                <thead>
+                    <tr><th>Título</th><th>Autor</th><th>Ano</th><th>Disponível</th><th>Ações</th></tr>
+                </thead>
+                <tbody id="lista-livros"></tbody>
+            </table>
+        </section>
+    </main>
+    <script src="/js/livros.js"></script>
+</body>
+</html>
